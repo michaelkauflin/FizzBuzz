@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace FizzBuzz
 {
@@ -10,8 +6,20 @@ namespace FizzBuzz
     {
         public string Solve(int numberToPrint)
         {
-		// this is a new comment 
-            throw new NotImplementedException();
+            if (numberToPrint % 3 == 0 && numberToPrint % 5 == 0)
+            {
+                return "FizzBuzz";
+            }
+            if (numberToPrint % 3 == 0)
+            {
+                return "Fizz";
+            }
+            if (numberToPrint % 5 == 0)
+            {
+                return "Buzz";
+            }
+
+            return numberToPrint.ToString(CultureInfo.InvariantCulture);
         }
     }
 }
